@@ -1,0 +1,47 @@
+# ----------------------------
+# 🔹 General Ignore Rules
+# ----------------------------
+node_modules
+.env
+dist
+build
+.DS_Store
+*.log
+logs/
+*.local
+
+# ----------------------------
+# 🔹 Frontend Specific
+# ----------------------------
+frontend/node_modules
+frontend/.env
+frontend/dist
+frontend/build
+
+# ----------------------------
+# 🔹 Backend Specific
+# ----------------------------
+backend/node_modules
+backend/.env
+backend/logs
+backend/uploads
+backend/.cache
+
+# ----------------------------
+# 🔹 IDE / Editor Files
+# ----------------------------
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# ----------------------------
+# 🔹 OS files (Mac/Windows)
+# ----------------------------
+Thumbs.db
+ehthumbs.db
+Desktop.ini

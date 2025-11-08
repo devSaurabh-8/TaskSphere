@@ -1,0 +1,17 @@
+node_modules
+.env
+# Build output
+dist
+build
+
+# Logs
+*.log
+
+# Cache
+.cache
+.vite
+.eslintcache
+
+# Editor/OS files
+.DS_Store
+Thumbs.db

@@ -1,16 +1,78 @@
-# React + Vite
+# 🚀 TaskSphere — MERN Task & Career Dashboard
+A full-stack MERN web app for task & career management with authentication and CRUD features.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**TaskSphere** is a full-stack MERN web application that allows users to manage their personal and professional tasks efficiently.  
+It provides secure authentication, a protected dashboard, and complete CRUD operations — all in one clean, responsive interface.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ⚙️ Tech Stack Used
+### Frontend
+- React.js (Vite)
+- React Router DOM
+- Axios
+- Tailwind CSS
 
-## React Compiler
+### Backend
+- Node.js
+- Express.js
+- MongoDB with Mongoose
+- JWT (Authentication)
+- bcrypt.js (Password Hashing)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🧠 Features
+- 🔐 User Authentication (Register, Login, Logout)
+- 🧾 Protected Dashboard
+- ⚙️ CRUD Operations
+- 💾 MongoDB Data Storage
+- 🎨 Modern UI with React + Tailwind
+- ⚡ Real-time data with Axios
+- 🌐 Frontend-Backend Integration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🧩 Folder Structure
+TaskSphere/
+│
+├── backend/
+│ ├── config/
+│ ├── controllers/
+│ ├── middleware/
+│ ├── models/
+│ ├── routes/
+│ └── server.js
+│
+├── frontend/
+│ ├── src/
+│ ├── public/
+│ └── vite.config.js
+│
+└── README.md
+
+## 🪄 Getting Started
+
+1️⃣ **Clone repository**
+git clone https://github.com/devSaurabh-8/TaskSphere.git
+cd TaskSphere
+
+2️⃣ Setup Backend
+cd backend
+npm install
+npm run dev
+
+
+3️⃣ Setup Frontend
+cd ../frontend
+npm install
+npm run dev
+
+Then open http://localhost:5173 🚀
+
+👨‍💻 Author
+Saurabh Pandey
+Frontend Developer | React.js | JavaScript
+📧 dev.saurabhpandey@gmail.com
+🔗 LinkedIn (https://www.linkedin.com/in/saurabh-pandey-974582390)  
+💻 GitHub (https://github.com/devSaurabh-8)

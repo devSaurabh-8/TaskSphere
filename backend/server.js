@@ -1,31 +1,55 @@
 import express from "express";
-import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cors from "cors";
-import authRoutes from "./routes/authRoutes.js";
-import userRoutes from "./routes/userRoutes.js";
+import connectDB from "./config/db.js";
+import authRoutes from "./routes/authRoutes.js"; 
+import userRoutes from "./routes/userRoutes.js"; 
 
 dotenv.config();
+
+// Initialize app
 const app = express();
 
-// Enable CORS for frontend
+//  Connect MongoDB
+connectDB();
+
+//  Middleware
 app.use(
   cors({
-    origin: process.env.CLIENT_ORIGIN || "http://localhost:5173",
+    origin: [
+      "http://localhost:3000",
+      "https://task-sphere-frontend-indol.vercel.app",
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
   })
 );
 
-// Parse incoming JSON data
 app.use(express.json());
 
-mongoose
-  .connect(process.env.MONGO_URI)
-  .then(() => console.log("✅ MongoDB Connected"))
-  .catch((err) => console.log("❌ Mongo Error:", err));
+//  Base route check
+app.get("/", (req, res) => {
+  res.send("🚀 TaskSphere Backend running successfully!");
+});
 
-app.use("/api/auth", authRoutes);
-app.use("/api/users", userRoutes);
+//  API routes
+app.use("/api/auth", authRoutes); // register/login routes
+app.use("/api/users", userRoutes); // enable only if defined
 
+//  404 handler
+app.use((req, res) => {
+  res.status(404).json({ message: "Route not found" });
+});
+
+//  Global error handler (extra safety)
+app.use((err, req, res, next) => {
+  console.error("❌ Server Error:", err.message);
+  res.status(500).json({ message: "Internal Server Error", error: err.message });
+});
+
+//  Start server
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
+app.listen(PORT, () => {
+  console.log(`✅ Server running on port ${PORT}`);
+});
